@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLEAU</title>
+    <style>
+        /* 全体の設定 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000000; /* 背景は漆黒 */
+            color: #ffffff;
+            font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", serif; /* 雰囲気のあるフォント */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* コンテンツを包む枠 */
+        .container {
+            text-align: center;
+            opacity: 0; /* 最初は隠しておく */
+            animation: fadeIn 3s ease-in forwards; /* 3秒かけてふわっと表示 */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ロゴ画像の設定 */
+        .logo-img {
+            max-width: 90%;      /* 横幅は画面の90%まで */
+            max-height: 60vh;    /* 高さは画面の60%まで（文字を入れるスペースを確保） */
+            object-fit: contain; /* 比率を崩さない */
+            margin-bottom: 2rem; /* 下の文字との隙間 */
+            filter: drop-shadow(0 0 20px rgba(139, 0, 0, 0.3)); /* うっすら赤い光を背後に（雰囲気作り） */
+        }
+
+        /* Coming soon... の文字 */
+        .coming-soon {
+            font-size: 2rem;        /* 文字サイズ */
+            letter-spacing: 0.3em;  /* 文字の間隔を広げて映画っぽく */
+            font-weight: lighter;
+            margin: 0;
+            text-transform: uppercase; /* 強制的に大文字にするか、そのままかはお好みで */
+            color: #e0e0e0;         /* 真っ白より少しグレーにして目に優しく */
+        }
+
+        /* スタジオ名 */
+        .studio-name {
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            letter-spacing: 0.15em;
+            color: #666666; /* 暗めのグレーで控えめに */
+        }
+
+        /* ふわっと表示するアニメーション定義 */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* スマホ向けの調整 */
+        @media (max-width: 600px) {
+            .coming-soon {
+                font-size: 1.2rem; /* スマホでは少し文字を小さく */
+                letter-spacing: 0.2em;
+            }
+            .logo-img {
+                max-height: 50vh; /* スマホではロゴを少し控えめに */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="tableau_logo_webtop.jpg" alt="TABLEAU" class="logo-img">
+        
+        <p class="coming-soon">Coming soon...</p>
+        <p class="studio-name">Atelier Xaïa 2026</p>
+    </div>
+
+</body>
+</html>
